@@ -33,11 +33,11 @@ if __name__ == "__main__":
 	try:
 		while (1):
 			main()
-			time.sleep(30)
+			time.sleep(10)
 
 
 	except KeyboardInterrupt:
-		print("Program Stopped")
+		print("Program Stopped Here")
 
 
 
