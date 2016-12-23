@@ -1,15 +1,17 @@
 import tkinter
 from tkinter import *
-import share_data
+from modules import share_data
 import time
+import urllib
 # Define variables
 share_names = []
 
 
-# Main function 
+# Main function
 def main():
 	# Write your code here
 	data = share_data.share_update
+	time.sleep(10)
 	yahoo = data.return_share_price('YHOO')
 	print(yahoo[1])
 	# gui_module()
@@ -33,12 +35,10 @@ if __name__ == "__main__":
 	try:
 		while (1):
 			main()
-			time.sleep(10)
+
 
 
 	except KeyboardInterrupt:
 		print("Program Stopped Here")
-
-
-
-
+	except urllib.error.HTTPError:
+		print("HTTP Error! Bad Request!")
